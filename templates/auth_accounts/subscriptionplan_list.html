@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Subscription Plan
+{% endblock %}
+
+{% block content %}
+
+     <div class="">
+
+        <h1>Subscription Plan</h1>
+        <a href="{% url 'subscriptionplan_add' %}">Add Subscription Plan</a>
+        <div>
+            <ul>
+                {% for subscription_plan in subscription_plans %}
+                <li>
+                        {{ subscription_plan.subscription_plan }} | {{ subscription_plan.amount_val }}
+                    </a>
+                    [
+                    <a href="{% url 'subscriptionplan_edit' subscription_plan.pk %}">Edit</a>
+                    |
+                    <a href="{% url 'subscriptionplan_delete' subscription_plan.pk %}">Delete</a>
+                    ]
+    
+                </li>
+                {% endfor %}
+    
+            </ul>
+        </div>
+     </div>
+
+{% endblock %}
