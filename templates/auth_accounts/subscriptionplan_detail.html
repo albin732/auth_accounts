@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Subscription Plan
+{% endblock %}
+
+{% block content %}
+
+     <div class="">
+        <h1>Subscription Plan</h1>
+        <p>Subscription Plan: {{ subscription_plan.subscription_plan }}</p>
+        <p>Subscription Type: {{ subscription_plan.subscription_type }}</p>
+        <p>Amount: {{ subscription_plan.amount_val }}</p>
+        <p>Duration: {{ subscription_plan.duration_val }}</p>
+        <p>Max Devices: {{ subscription_plan.max_device_limit }}</p>
+        <p>Max Users: {{ subscription_plan.max_user_limit }}</p>
+        <p>Description: {{ subscription_plan.description }}</p>
+     </div>
+
+{% endblock %}

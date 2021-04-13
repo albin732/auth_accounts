@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from auth_accounts.forms import UserSignUpForm, UserDetailForm
 # from auth_accounts.models import UserDetail
 from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 
 
 class UserSignUp(View):
@@ -22,10 +23,14 @@ class UserSignUp(View):
         if user_form.is_valid() and userdetail_form.is_valid():
             user = user_form.save()
             # user.userdetail.user_type = userdetail_form.cleaned_data.get('user_type')
-            user.userdetail.user_type = '3'
+            user.userdetail.user_type = '3'  # IndividualUser
             user.userdetail.contact_number = userdetail_form.cleaned_data.get(
                 'contact_number')
             user.userdetail.save()
+            # add permission_group
+            iusr_group = Group.objects.get(name='individual_user_perm')
+            iusr_group.user_set.add(user)
+
             messages.success(request, 'Account created successfully')
             return redirect('/auth_accounts/UserSignUp')
         messages.success(request, 'Validation Error')

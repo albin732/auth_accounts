@@ -14,8 +14,10 @@
             <ul>
                 {% for subscription_plan in subscription_plans %}
                 <li>
-                        {{ subscription_plan.subscription_plan }} | {{ subscription_plan.amount_val }}
+                    <a href="{% url 'subscriptionplan_detail' subscription_plan.pk %}">{{ subscription_plan.subscription_plan }}</a>
+                         | {{ subscription_plan.amount_val }}
                     </a>
+                    &nbsp;&nbsp;
                     [
                     <a href="{% url 'subscriptionplan_edit' subscription_plan.pk %}">Edit</a>
                     |

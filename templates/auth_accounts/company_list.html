@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Company
+{% endblock %}
+
+{% block content %}
+
+     <div class="">
+
+        <h1>Company List</h1>
+        <a href="{% url 'company_add' %}">Add Company</a>
+        <div>
+            <ul>
+                {% for company in companies %}
+                <li>
+                    <a href="{% url 'company_detail' company.pk %}">{{ company.company_name }}</a>
+                         | {{ company.company_email }}
+                    </a>
+                    &nbsp;&nbsp;
+                    [
+                    <a href="{% url 'company_edit' company.pk %}">Edit</a>
+                    |
+                    <a href="{% url 'company_delete' company.pk %}">Delete</a>
+                    ]
+    
+                </li>
+                {% endfor %}
+    
+            </ul>
+        </div>
+     </div>
+
+{% endblock %}

@@ -10,7 +10,7 @@
 
         <h1>Delete Subscription Plan</h1>
 
-         <form action="{% url 'subscriptionplan_delete'subscription_plan.pk %}" method="POST" >
+         <form action="{% url 'subscriptionplan_delete' subscription_plan.pk %}" method="POST" >
             {% csrf_token %}
             <p>Are you sure you want to delete "{{ subscription_plan.title }}"?</p>
             <a href="{% url 'subscriptionplan_list'  %}"> &lt; &lt; back</a>

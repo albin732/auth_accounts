@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Company Detail
+{% endblock %}
+
+{% block content %}
+
+     <div class="">
+        <h1>Company Detail</h1>
+        <p>Company Name Plan: {{ company.company_name }}</p>
+        <p>Company Email: {{ company.company_email }}</p>
+        <p>Contact Person: {{ company.contact_person }}</p>
+        <p>Contact Number: {{ company.contact_number }}</p>
+        <p>Company Address: {{ company.company_address }}</p>
+     </div>
+
+{% endblock %}
