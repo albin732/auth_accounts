@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
 
 from auth_accounts.forms import UserSignUpForm, UserDetailForm
 # from auth_accounts.models import UserDetail
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 
 

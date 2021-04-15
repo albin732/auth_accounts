@@ -5,13 +5,8 @@ from .models import UserDetailModel
 # Register your models here.
 
 
-
 class AdmUserDetail(admin.ModelAdmin):
-    list_display = ('user','user_type','contact_number')
+    list_display = ('user', 'user_type', 'contact_number')
 
 
-
-
-
-
-admin.site.register(UserDetailModel,AdmUserDetail)
+admin.site.register(UserDetailModel, AdmUserDetail)

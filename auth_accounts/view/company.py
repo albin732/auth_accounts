@@ -1,11 +1,7 @@
-from django.shortcuts import render, redirect
-from django.views import View
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 
 # from auth_accounts.forms import SubscriptionPlanForm,SubscribedEntityForm
 from auth_accounts.models import CompanyModel
-from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView, DetailView
 from django.urls import reverse_lazy

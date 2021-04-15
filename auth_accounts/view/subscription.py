@@ -53,7 +53,8 @@ class SubscriptionPlan_ListView(ListView):
     model = SubscriptionPlanModel
     template_name = 'auth_accounts/subscriptionplan_list.html'
     context_object_name = 'subscription_plans'
-    queryset = SubscriptionPlanModel.objects.all()
+    queryset = SubscriptionPlanModel.objects.filter(amount_val=222.0)
+    # queryset = SubscriptionPlanModel.objects.all()
 
 
 @method_decorator(all_usr_decorators, name="dispatch")
